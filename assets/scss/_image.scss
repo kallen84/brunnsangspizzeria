@@ -1,0 +1,23 @@
+/*
+Project: Brunnsängs Pizzeria
+Description: Image
+Author: Karl Karlsson
+Date: 2016-12-04
+Licence: https://www.karlkarlsson.com
+
+TABLE OF CONTENTS
+
+1.	Basic image responsiveness.
+*/
+
+/*
+1.	Basic image responsiveness.
+*/
+
+img {
+	width: 100%;
+	image-rendering: -moz-crisp-edges;
+	image-rendering: -o-crisp-edges;
+	image-rendering: -webkit-optimize-contrast;
+	-ms-interpolation-mode: nearest-neighbor;
+}

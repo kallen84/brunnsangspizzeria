@@ -1,0 +1,780 @@
+/*
+Project: Brunnsängs Pizzeria
+Description: Pages - Layout and specific styles for our  Start-, Meny-, Event- and 404-page
+Author: Karl Karlsson
+Date: 2016-12-20
+Licence: https://www.karlkarlsson.com
+
+TABLE OF CONTENTS
+
+1. Pages / Style for different Pages
+	1. Start Page
+	2. Meny Page
+	3. Event Page 
+	4. 404 Page
+2. Desktop Media Queries (Desktop Adjustment)	
+*/
+
+/*
+1  Pages General Styles
+*/
+
+/*
+1.1 Start Page
+*/
+
+/** Om Oss-section **/
+section.section--omoss {
+	padding: 7em 0;
+
+	.section--header { // div
+		padding-bottom: 1em;
+	}
+
+	.section--content { // div
+		.text {
+			padding-left: 0;
+		}
+
+		p {
+			font-size: $font-size-small;
+			font-weight: $font-weight-thin;
+			font-style: italic; 
+		}
+
+		.container--svg { // div
+			padding: $glutter-default 0; // 20 0
+			background: $grey-bg;
+			
+			img {
+				display: block;
+				width: 350px;
+				height: 250px;
+				margin: 0 auto;
+				padding-left: 0;
+				padding-right: 0;
+				@include easeEffect;
+
+				&:hover {
+					transform: scale(1.2);
+					cursor: pointer;
+				}
+			}
+		} // .container--svg
+
+		.section--footer {
+			padding-top: 4em;
+
+			p {
+				width: 70%;
+				@include dark-btn-bg;
+
+				&:hover, &:hover span {
+					@include dark-btn-bg-hover;
+				}
+  
+				span {
+					padding: $margin-xs;
+					color: $lighter-fc;
+					font-family: "FontAwesome";
+					font-size: 1.2em; // 20px
+					@include easeEffect;
+
+					&:hover {
+						color: $link-color-3--hover;
+						cursor: pointer;
+					}
+				}
+
+				span.icon-phone {
+					&:before {
+						content: '\f095';	
+					}
+				}
+
+				span.icon-mail {
+					&:before {
+						content: '\f0e0';	
+						font-style: normal;
+					}
+				}	
+
+				a {
+					text-decoration: none;
+				}		
+			} // p
+		} // .secction--footer
+	} // .section--content
+} // .section--omoss
+
+
+/** Öppetider-section **/
+section.section--oppetider {
+	padding: 7em 0;
+	@include parallax-scrolling;
+
+	.section--content { // section
+		.left-col {
+			border-right: solid 1px $grey-darker-bg;
+			text-align: right;
+		}
+
+		hr {
+			display: none;
+		}
+
+		.right-col {
+			position: relative;
+		}		
+
+		h2 {
+			color: $secondary-fc;
+		}
+	}
+
+	.section--footer { // footer
+		margin: 0 auto;
+		padding-top: 4em;
+
+		a {
+			&:hover {
+				text-decoration: none;
+			}
+
+			p {
+				position: relative;
+				width: 20em;
+				margin: 0 auto;
+				@include dark-btn-bg;
+				@include easeEffect;
+				
+				&:hover {
+					background: none;
+					color: $main-fc;
+				}	
+
+				&:hover span {
+					display: block;
+				}
+
+				span {
+					@include easeEffect;
+				}
+
+				.icon-pizza { // span
+					position: absolute;
+					top: 50%;
+					right: 10px;
+					display: none;
+					width: 28px;
+					height: 28px;
+					background: url(../../images/pizza-icon-black.svg);
+					background-size: 28px 28px;
+					-ms-transform: translateY(-50%);
+					transform: translateY(-50%);
+					@include easeEffect;
+
+					&:hover {
+						content: url(../../images/pizza-icon.svg);
+					}
+				}	
+			} // p
+		} // a
+	} // .secction--footer
+} // section--oppetider
+
+/** Hitta Oss **/
+section.section--hittaoss {
+	background: $lighter-fc-2;
+	padding-top: 7em;
+
+	.article--hittaoss {
+		.section--content {
+			#map {
+				margin-bottom: -10px;
+			}
+		}
+	}
+}
+
+/** Galleri-section **/
+section.section--galleri {
+	padding: 7em 0;
+
+	.section--header { // header
+		padding-bottom: 3em;
+	}
+
+	.figure--galleri > div { // figure
+		padding-bottom: 2em;
+
+	}
+
+	.figure--galleri .img-wrapper { // div
+		display: inline-block;
+    	overflow: hidden;
+		@include box-shadow;
+
+		img {
+			@include img-scale-zoom-in;
+		}
+	}
+}
+
+/*
+1.2 Menu Page
+*/
+
+main.main--menu-page { // main
+	@include parallax-scrolling;
+
+	.wrapper--menu-page { // div
+		width: 90%;
+		margin: 0 auto;
+		margin-bottom: 3em;
+		margin-top: 14em;
+		padding: 0 $glutter-small;
+		border: solid 3px $darker-bg;
+
+		.section--menu-page { // section
+			margin-bottom: 5em;
+
+			.header--menu { // header
+				width: 25em;
+				margin: 0 auto;
+
+				h1 {
+					@include pages-header-hover;
+				}
+
+			} // .header-menu
+		} // .section-menu
+	} // .wrapper--menu-page
+
+	.section--lunch { // section
+		padding: 4em 0 3em 0;
+		margin-bottom: 2em;
+		background: $darker-bg-2;
+		text-align: center;
+		color: $lighter-fc-2;
+
+		.outer-wrapper { // div
+			.border-wrapper {
+				width: 25em;
+				margin: 0 auto;
+				margin-bottom: 1em;
+				border: solid 2px $lighter-fc-2;
+
+				h2 {
+					font-size: $font-size-large; 
+					transition: all .4s ease;
+
+					span {
+						color: $secondary-fc;
+						padding-left: 30px;
+					}
+					&:hover {
+						cursor: pointer;
+						-webkit-transform:scale(1.2);transform:scale(1.2);
+					}
+				}
+			} // .border-div
+		} // .outer-div
+	
+		p:nth-child(2) {
+			padding-top: 0.5em;
+			font-size: 1.7em;
+			font-weight: 400;
+		}
+
+		p:nth-child(3) {
+			font-size: 1.3em;
+			padding: 0 $glutter-default;
+		}
+
+		a {
+			@include buzzOutEffect;
+			
+			.icon-phone { // i
+				font-size: 3em;
+				color: $lighter-fc-2; 
+				@include easeEffect;
+
+				&:hover {
+					color: $link-color-3--hover;
+					@include easeEffect;
+				}
+			}
+		} // a
+	} // .section--lunch
+
+	section.section--dishes { // section
+		line-height: 2em;
+
+		.article--dishes { // article
+			.section--header {
+				padding: 3em 0;
+
+				.section--title { // h2
+					width: 100%;
+					padding-bottom: 0.2em;
+					font-size: $font-size-xl;
+					font-weight: $font-weight-thin;
+					color: $lighter-fc-2;	
+
+						span { 
+							width: 100%;
+							padding: $margin-xs $margin-m; // 5px 40px
+        					background: $darker-bg; 
+    					}				
+				} // .section-title
+
+				p {
+					text-align: center;
+				}
+			} // .section-header
+
+			.table { // table 
+				width: 100%;
+				background: $secondary-bg;
+				border-radius: 5px;
+				box-shadow: 10px 10px 42px -20px rgba(0,0,0,.90);
+
+				thead {
+					th:nth-child(2) {
+						text-align: right;
+					}
+				}
+
+				th {
+					padding: $glutter-default;
+					text-transform: uppercase;
+					border: none;
+					font-size: 1.8em;
+					font-weight: $font-weight-thin;
+					font-family: $font-family;
+					color: $secondary-fc;
+				}
+
+				td {
+					padding: 0 $glutter-default $glutter-default $glutter-default;
+					border: none;
+					font-size: 1.2em;
+					font-weight: $font-weight-thin;
+					font-family: $font-family;
+				}
+
+				tbody {
+					th {
+						padding: 0 $glutter-default 1px $glutter-default;
+						font-size: 1.4em;
+						font-weight: $font-weight-thin;
+						font-family: $font-family;
+						text-transform: none;
+						color: $main-fc;
+					}
+				}
+			} // .table
+
+			.dubbelbotten { // div				
+				.table { // table 
+					tbody {
+						tr { 
+							th {
+								padding-bottom: 20px;
+							}
+						}
+					} // tbody
+				} // .table
+			} // .div  
+
+		} // .article--dishes
+	} // section--dishes
+
+	/** Adds padding to table **/
+	section.section--kebab,
+	section.section--sallad,
+	section.section--hamburgare,
+	section.section--kottratter,
+	section.section--pasta,
+	section.section--fisk,
+	section.section--smaratter,
+	section.section--barnmeny { // section
+		.article--dishes { // article
+			.table { // table 
+				tbody {
+					tr {
+						th {
+							padding-top: $glutter-default;
+
+							// align td to right (Priserna till höger om texten). Barnmeny, Fisk, Kötträtter, Hamburgare
+							&:nth-child(2) {
+								text-align: right;
+							}
+						}
+					}
+				}
+			} 
+		} // .article--dishes
+	} // section--dishes
+
+	/** Hamburgar-section **/
+	section.section--hamburgare { // section
+		.article--dishes { // article					
+			.table { // table 
+				tbody {
+					.title--hamburger-extra { // td, extra tillbehör title
+						text-transform: uppercase;
+						font-size: 1.8em;
+						color: $secondary-fc;
+					}
+
+					// Adding padding-botom to the last child (Extra tillbehör, "Ägg") 
+					tr:last-child { 
+
+						th {
+							padding-bottom: $glutter-small;
+						}
+					}
+				}
+			} // .table
+		} // .article--dishes
+	} // section--hamburgare
+
+	/** Pizza-section **/
+	section.section--pizza {
+		.article--dishes { // article
+			.section--content { // section
+				.row { // div
+					.extra-tillbehor { // table
+						tbody {
+							tr {
+								th {
+									padding-bottom: 0.5em;
+
+									&:nth-child(2) {
+										text-align: right;
+									}	
+								}
+							}
+						}
+					}
+				}
+
+			}
+		}
+	}
+
+} // .main-menu-page
+
+// Scroll to top
+a.scroll-to-top {
+	position: fixed;
+	right: 2.5em;
+	bottom: 1.5em;
+	display: inline-block;
+	visibility: hidden;
+	font-size: 4em;
+	opacity: 0;
+	color: $main-fc;
+	@include easeEffect;
+
+	&.scroll-is-visible {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	&.scroll-fade-out { 
+		opacity: .9;
+	}
+
+	&:hover {
+		color: $link-color-3--hover;
+		opacity: 1;
+	}
+}
+
+/*
+1.3 Event Page
+*/
+
+main.main--event-page {
+	padding: 11em 0 3em 0;
+	@include parallax-scrolling;
+
+	.section--event { // section
+		.section--event-header { // section
+				width: 25em;
+				margin: 0 auto;
+			.section--header { // header
+				padding-bottom: 2.5em;
+
+				h1 {
+					@include pages-header-hover;
+				} 
+			}
+		} // .section--event-header
+
+		.article--event { // article
+			background: $main-bg;
+			margin-bottom: 2em;
+			padding: 2em 3em 4em 3em;
+
+			h1 {
+				font-size: $font-size-large;
+				padding-bottom: 0.8em;			
+			}
+
+			.event--content { // div
+				p {
+					font-size: 1.3em;
+					line-height: 1.8;
+					font-weight: $font-weight-thin;
+				}
+
+				.datepicker { // p
+					margin-top: 3em;
+					padding: 0.5em;
+					font-size: 1.3em;
+					width: 290px;
+					text-align: center;
+					font-weight: $font-weight-thin;
+					color: $lighter-fc-2;
+					background: $darker-bg;
+					transition: all .4s ease-in-out;
+
+					&:hover {
+						background: none;
+						color: $link-color-2;
+						cursor: pointer;
+						-webkit-transform: scale(1.2);transform: scale(1.2);
+					}
+
+					span {
+						font-weight: $font-weight-regular;
+					}
+				}
+			} // .event--content
+
+			.event--thumbnail { // div
+				display: inline-block;
+    			overflow: hidden;
+				padding: 0;
+				@include box-shadow;
+
+				img {
+					@include img-scale-zoom-in;
+				}
+			} // .event--thumbnail
+
+		} // article
+	} // .section--event
+} // .main--event-page
+
+/*
+1.4 404 Page
+*/
+
+main.main--error-page {
+	width: 100%;
+	height: 100vh!important;
+	margin-top: 4em;
+	padding: 11em 0 3em 0;
+	background: url(../../images/event-bg.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	@include parallax-scrolling;
+
+	.section--error { // section
+		.section--error-header { // section
+				width: 100%;
+				margin: 0 auto;
+
+				.section--header { // header
+					padding-bottom: 2.5em;
+
+					h1 {
+						@include pages-header-hover;
+					} 
+				}
+		} // .section--event-header
+
+		.article--error { // article
+			background: $main-bg;
+			margin-bottom: 4em;
+			padding: 2em 3em 4em 3em;
+
+			h1 {
+				font-size: $font-size-medium;
+				padding-bottom: 0.8em;			
+			}
+
+			.text { // p
+				font-size: 1.6em;
+				font-weight: 200;
+			}
+
+			.error--content { // div
+				padding-top: 3em;
+
+				p { // p
+					width: 290px;
+					margin-top: 3em;
+					margin: 0 auto;
+					padding: 0.5em;
+					background: $darker-bg;
+					font-size: 1.3em;
+					font-weight: $font-weight-thin;
+					text-align: center;
+					-webkit-transition: all .4s ease-in-out;
+					transition: all .4s ease-in-out;
+
+					&:hover {
+						background: none;
+						color: $link-color-2;
+						cursor: pointer;
+						-webkit-transform: scale(1.2);transform: scale(1.2);
+					}
+
+					a {
+						color: $lighter-fc-2;
+						text-decoration: none;
+
+						&:hover {
+							color: $link-color-2;
+						}
+
+						.fa-arrow-circle-left:before {
+							vertical-align: middle;
+							padding-right: 5px;
+						}
+					}
+				}
+			} // .error--content
+		} // article
+	} // .section--error
+} // .main--error-page
+
+/*
+2. Desktop Media Queries (Desktop Adjustment)	
+*/
+
+@media (max-width: 1200px) {
+
+	// Om Oss-section
+	section.section--omoss {
+		padding: 6em 0 7em 0;
+
+		.section--content { // div
+			.section--footer { // div
+				p {
+					width: 80%;
+			
+				} 
+			}
+		}
+	} // .section--omoss
+
+	/** Öppetider-section **/
+	section.section--oppetider {
+		padding: 6.5em 0 14em 0;
+
+		.section--footer { // footer
+			p {
+				width: 37%;
+			}
+		} // .secction--footer
+	} // section--oppetider
+
+	/** Hitta oss-section **/
+	section.section--hittaoss {
+		padding-top: 6em;
+	}	
+
+	/** Galleri-section **/
+	section.section--galleri {
+		padding: 6em 0;
+
+		.section--header { // header
+			padding-bottom: 3em;
+		}
+	}
+
+	/* Footer */
+	footer.footer {
+    	padding: 3em 3em 0.5em 3em;
+	}
+
+	/** Scroll To Meny **/
+	a.scroll-to-top {
+		bottom: 1em;
+		right: 2em;
+	}
+		
+} // 1200px
+
+@media (max-width: $default-page) { // 1024px
+	
+	#section--header h1 {
+		font-size: $font-size-large; 
+	}
+	
+	// Om oss-section
+	section.section--omoss {
+		padding: 4em 0 7em 0;
+
+		.section--content { // div
+			p {
+				font-size: $font-size-small;
+			}
+
+			.container--svg { // div
+				img {
+					width: 300px;
+					height: 200px;
+				}
+			} // .container--svg
+
+			.section--footer {
+				p {
+					width: 92%;
+				}
+			} 
+		} // .section--content
+	} // .section--omoss
+
+	/** Öppetider-section **/
+	section.section--oppetider {
+		padding: 4.5em 0 8em 0;
+
+		.section--footer { // footer
+			p {
+				width: 48%;
+			}
+		} 
+	} // section--oppetider
+
+	/** Hitta oss-section **/
+	section.section--hittaoss {
+		background: $lighter-fc-2;
+		padding-top: 5em;
+	}		
+
+	section.section--oppetider,
+	main.main--menu-page,
+	main.main--event-page {
+		background-attachment: initial; // fixes img background on ios-devices. unactivade parralla-scrolling
+	} 
+
+	main.main--event-page {
+		padding: 9em 0 3em 0;
+	} 
+
+	/** Scroll To Meny **/
+	a.scroll-to-top {
+		bottom: 0.5em;
+		right: 1.5em;
+	}
+
+} // 1200px

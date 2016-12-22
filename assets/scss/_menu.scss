@@ -1,0 +1,169 @@
+/*
+Project: Brunnsängs Pizzeria
+Description: Main Menu Navigation
+Author: Karl Karlsson
+Date: 2016-12-20
+Licence: https://www.karlkarlsson.com
+
+Description: Hero container with box shadow
+
+Table of contents
+
+1.	Menu
+2.  Desktop Media Queries (Desktop Adjustment)
+*/
+
+
+/*
+1.	Menu
+*/
+
+header.main-header {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    display: table;
+    height: $margin-l;
+    padding: $margin-s $margin-m $margin-s 55px; 
+    background: $secondary-bg;
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+
+    // Logo
+    .navLogo { // a
+        display: block;
+        width: 150px;
+        height: 90px;
+        padding-right: $glutter-small;
+        background: url(../../images/logo-black.svg);
+        background-size: 150px 90px;
+    }
+
+    // Menu Nav
+    .navbar { // nav
+        display: table-cell;
+        width: 80%;
+        border: none;
+        background: none;
+        vertical-align: middle;
+
+        .navbar-nav { // ul
+            float: right;
+
+            li.menu-item { //li
+                &.active {
+                    a {
+                        background: none;
+                        &:after {
+                            opacity: 1;
+                            -webkit-transform: translateY(0);transform: translateY(0);
+                        }
+                    }
+                }
+            }
+
+            a {
+                text-transform: uppercase;
+                color: $link-color-1;
+                font-size: $font-size-small;
+                font-weight: $font-weight-light;
+
+                &:hover {
+                    color: $link-color-1--hover;
+                }
+
+                &:focus,
+                &:visited {
+                    opacity: 1;
+                }
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    left: $glutter-small; 
+                    right: $glutter-small;
+                    bottom: 0;
+                    border-bottom: 2px solid $link-color-1--hover;
+                    -webkit-transform: translateY(0);transform: translateY(0);
+                    opacity: 0;
+                    -webkit-transition: all 0.4s ease-in-out;
+                    transition: all 0.4s ease-in-out;
+                }
+
+                &:hover::after {
+                    content: '';
+                    position: absolute;
+                    left: $glutter-small; 
+                    right: $glutter-small;
+                    bottom: 0;
+                    -webkit-transform: translateY(-$margin-xs);transform: translateY(-$margin-xs);
+                    border-bottom: 2px solid $link-color-1--hover;
+                    opacity: 1;
+                }
+            } // a
+        } // ul   
+
+        button.navbar-toggle {
+            border: none;
+
+            &:hover, 
+            &:focus {
+                background: none;
+            }   
+
+            .icon-bar { // span. burger menu lines
+                width: 30px;
+                height: $margin-xs;
+            }
+        } 
+    } // nav
+} // .header
+
+
+/*
+2.  Desktop Media Queries (Desktop Adjustment)
+*/
+@media (max-width: 1200px) {
+
+    header.header {
+        .navLogo { // a
+            width: 130px;
+            height: $margin-xl;
+            background-size: 130px $margin-xl;
+        }
+
+
+        .navbar { // nav
+            .navbar-nav { // ul
+                a {
+                    font-size: $font-size-small;
+                }
+            }   
+        }
+    }
+
+} // 1200px
+
+@media (max-width: $default-page) { // 1024px
+
+    header.header {
+        padding: $margin-xs 35px $margin-xs 50px;
+        
+        .navLogo { // a
+            width: $margin-xxl; 
+            height: $margin-l; 
+            background-size: $margin-xxl $margin-l; 
+        }
+     
+        .navbar { // nav   
+            .navbar-nav { // ul
+                a {
+                    font-size: $default-font-size;
+                    font-weight: $font-weight-regular;
+                }
+            }   
+        }
+    }
+
+} // 1024px

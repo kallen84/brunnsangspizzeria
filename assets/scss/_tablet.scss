@@ -1,0 +1,107 @@
+/*
+Project: Brunnsängs Pizzeria
+Description: Tablet Layout - Styles and layout for the sites Pages
+Author: Karl Karlsson
+Date: 2016-12-04
+Licence: https://www.karlkarlsson.com
+
+TABLE OF CONTENTS
+
+1. Tablet Layout & Styles - Start, Menu & Event Page
+
+*/
+
+/*
+1.
+*/
+
+@media all and (max-width: 991px) { // 991px
+
+	/** Öppetider-section **/
+	section.section--oppetider {
+	    padding: 7em 0;
+	} 
+
+    /** Galleri-section **/
+    section.section--galleri {
+        padding: 5em 0;
+    }
+
+    main.main--event-page {
+        padding: 8em 0 3em 0;
+
+        .section--event { // section
+            .section--event-header { // section
+                .section--header { // header
+                    padding-bottom: 2.5em;
+
+                    h1 {
+                        font-size: $font-size-xxl;
+                    } // h1
+                }
+            } // .section--event-header
+
+            .article--event { // article
+                h1 {
+                    font-size: 2.8em;
+                    padding-bottom: 0.4em;			
+                }
+
+                .event--content { // div
+                        padding: 0 0 1.5em 0;
+
+                    p {
+                        font-size: 1.2em;
+                    }
+
+                    .datepicker { // p
+                        margin-top: 1.5em;
+                        padding: 0.5em;
+                        font-size: 1.2em;
+                        width: 280px;
+                    }
+                } // .event--content
+            } // article
+        } // .section--event
+    } // .main--event-page
+
+} // 991px
+
+@media all and (max-width: $tablet-breakpoint) { // 960px
+    
+    section.section--hero {
+        nav.slider {
+            height: 40em;
+        }
+        
+        .container--heroLogo { // div
+            .heroLogo { // a
+                width: 300px;
+                height: 180px;
+                background-size: 300px 180px;
+
+            } // heroLogo
+
+            .slogan { // div
+                .container--text { // div
+                    p {
+                        padding: 4px $margin-s;
+                        color: $lighter-fc;
+                        font-size: 1.2em;
+                        text-align: center;
+
+                        &:nth-child(1) {
+                            width: 55%;
+                        }
+
+                        &:nth-child(2) {
+                            width: 80%;
+                            top: 2.3em;
+                        }
+                    } // p
+                } // container--text
+            } // slogan
+
+        } // container--hero
+    }
+}

@@ -1,0 +1,58 @@
+/*
+Project: Brunnsängs Pizzeria
+Description: Settings for the projects typography
+Author: Karl Karlsson
+Date: 2016-12-20
+Licence: https://www.karlkarlsson.com
+
+TABLE OF CONTENTS
+
+1.  Font Families
+2.  Font Sizes
+3.  Headings h1-h4
+*/
+
+/*
+1.	Font families.
+*/
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i,900);
+
+$font-family: 'Roboto', sans-serif, Arial, Helvetica;
+
+$font-weight-thin: 100;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+$font-weight-black: 900;
+
+/*
+2. Font Sizes
+*/
+$default-font-size: 1em; // 15px
+$font-size-xsmall: 12px; // 12px
+$font-size-small: $font-size-xsmall * 2; // 22px menu
+$font-size-medium: 2em; // 30px
+$font-size-large: $default-font-size * 3; // 45px
+$font-size-xl: 3.7em; // 55,5px
+$font-size-xxl: 4em; // 60px
+$font-size-xxxl: 5em; // 75px
+
+/* 
+3. Headings h1-h4
+*/
+
+#body h1,
+h2,
+h3,
+h4 {
+	text-transform: uppercase;
+	font-weight: $font-weight-thin;
+}
+
+section h1 {
+	font-size: $font-size-xxl;
+}
+
+p {
+	font-size: $default-font-size;
+}

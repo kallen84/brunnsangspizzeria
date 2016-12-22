@@ -1,0 +1,44 @@
+/*
+Project: Brunnsängs Pizzeria
+Description: Set up project margins and other distances.
+Author: Karl Karlsson
+Date: 2016-12-20
+Licence: https://www.karlkarlsson.com
+
+TABLE OF CONTENTS
+
+1.	Page Wrapper Sizes
+2.	Breakpoints
+3.	Column Glutter
+4.	Vertical Margins
+*/
+
+/*
+1.	Page Wrapper Sizes
+*/
+$large-page: 1440px;
+$medium-page: 1280px;
+$default-page: 1024px;
+$small-page: 900px;
+
+/*
+2.	Breakpoints
+*/
+$tablet-breakpoint: 960px;
+$mobile-breakpoint: 767px;
+
+/*
+3.	Column Glutter / The margin between columns.
+*/
+$glutter-default: 20px;
+$glutter-small: 15px;
+
+/*
+4.	Vertical Margins
+*/
+$margin-xs: 5px;
+$margin-s: $glutter-default/2; // 10px
+$margin-m: $glutter-default*2; // 40px
+$margin-l: $glutter-default*3; // 60px
+$margin-xl: $glutter-default*4; // 80px
+$margin-xxl: $glutter-default*5; // 100px

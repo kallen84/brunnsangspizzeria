@@ -1,0 +1,56 @@
+/*
+Project: Brunnsängs Pizzeria
+Description: Default Footer
+Author: Karl Karlsson
+Date: 2016-12-20
+Licence: https://www.karlkarlsson.com
+
+TABLE OF CONTENTS
+
+1. Main Footer Style
+
+*/
+
+
+/*
+1. Main Footer Style
+*/
+
+footer.footer {
+    background: $darker-bg;
+    padding: 5em 3em 0.5em 3em;
+
+    div.container--svg {
+        width: $margin-xl; 
+        margin: 0 auto;
+        padding-left: 0;
+        height: auto;
+        transition: all .5s ease-in-out;
+
+        a {
+            cursor: pointer;
+            
+            .svg { // svg
+                .inner-icon {
+                    transition: all .4s ease-in-out;
+
+                    &:hover {
+                        transform: rotateY(20deg) scale(1.1);
+                        fill: $secondary-fc;
+                    }
+                }
+            } 
+        } // a
+    } // div
+
+    p {
+        color: $lighter-fc-2;
+        font-size:  $font-size-xsmall;
+        text-align: center;
+        line-height: 1;
+    }
+
+    p:nth-of-type(1) {
+        padding-top: 2.5em;
+    }
+}

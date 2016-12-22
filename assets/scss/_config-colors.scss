@@ -1,0 +1,66 @@
+/*
+Project: Brunnsängs Pizzeria
+Description: This is our project color palette settings
+Author: Karl Karlsson
+Date: 2016-12-20
+Licence: https://www.karlkarlsson.com
+
+TABLE OF CONTENTS
+
+1.	Global font Colors
+2.	Global background Colors
+3.	Border color.
+4.	Link colors.
+5. 	Text- & Box-shadow
+*/
+
+/*
+1.	Global font colors
+*/
+
+$main-fc: #272727;
+$secondary-fc: #e41e25;
+$secondary-lighter-fc: #ea3f3f;
+$third-fc: #cecece;
+$lighter-fc: #f6f6f6;
+$lighter-fc-2: #F8F8F8;
+
+/*
+2.	Global Background Colors
+*/
+
+$main-bg: #f6f6f6;
+$secondary-bg: #edeff0;
+$lighter-bg-2: #F8F8F8;
+$third-bg: #e41e25;
+$darker-bg: #282727;
+$darker-bg-2: #2f2f2f;
+$grey-bg: #e5e5e5;
+$grey-darker-bg: #8f8e8e;
+
+/*
+3.	Border color.
+*/
+
+$border-color: $main-fc;
+
+/*
+4.	Link colors
+*/
+
+$link-color-1: $main-fc;
+$link-color-2: $secondary-fc;
+$link-color-1--hover: $secondary-fc;
+$link-color-3--hover: $secondary-lighter-fc;
+
+/*
+5.	Text- & Box-shadow
+*/
+
+@mixin box-shadow() {
+	box-shadow: 0 10px 42px -20px rgba(0,0,0,.53);
+}
+
+@mixin text-shadow() {
+	text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}

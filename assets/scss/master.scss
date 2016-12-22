@@ -1,0 +1,96 @@
+/*
+Project: Brunnsängs Pizzeria
+Description: Import framework by parts.
+Author: Karl Karlsson
+Date: 2016-12-20
+Licence: https://www.karlkarlsson.com
+
+TABLE OF CONTENTS
+
+1.	Reset / Eric Meyer's css reset.
+2.	Config Distances / Margins and distances.
+3.	Config Colors / All color related.
+4.	Config Typography / Font and text-styles.
+5.	Image / Image classes and aspect ratio.
+6.	Page Components / Now when all globals are set. Let's configure our most used page components.
+	1. Main Menu
+	2. Hero
+7.	Page Components / Most common page components.
+8.  Pages / Layout and specific styles for our Start, Gallery, Showreel CV, News & Contact Page 
+9.	Media Queries / For Mobile and Tablet Sizes
+*/
+
+/*
+1.	Reset / Eric Meyer's css reset.
+*/
+
+//@import "reset";
+
+/*
+2.	Config Distances / Margins and distances (desktop, tablet & & mobile).
+*/
+
+@import "config-distances";
+
+/*
+3.	Config Colors / All color related.
+*/
+
+@import "config-colors";
+
+/*
+4.	Config Typography / Font and text-styles.
+*/
+
+@import "config-typography";
+
+/*
+5.	Image/image classes and aspect ratio.
+*/
+
+@import "image";
+
+/*
+6 Page components / Includes
+6.1 Main Menu
+*/
+
+// A simple horizontal menu that scales with a  hamburger for mobile.
+@import "menu";
+
+/*
+6.2 Hero
+*/
+
+@import "hero";
+
+/*
+6.3 Main Footer
+*/
+
+@import "footer";
+
+/*
+7.	Page Components / Most common page components.
+*/
+
+@import "page-components";
+
+/*
+8.	Pages / Layout and specific styles for our pages
+*/
+
+@import "pages";
+
+/*
+9.	Media queries
+*/
+
+// Media queries for tablet
+@media all and (max-width: $tablet-breakpoint) {
+	@import "tablet";
+}
+// Media queries for mobile
+@media all and (max-width: $mobile-breakpoint) {
+	@import "mobile";
+}

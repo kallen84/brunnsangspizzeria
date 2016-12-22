@@ -1,0 +1,219 @@
+/*
+Project: Brunnsängs Pizzeria
+Description: Most basic page components 
+Author: Karl Karlsson
+Date: 2016-12-20
+Licence: https://www.karlkarlsson.com
+
+TABLE OF CONTENTS
+
+1.	Mixins and variables
+2.	Body/Wrapper container and Hero section
+
+*/
+
+/*
+1.	Mixins, varibles, debugging 
+*/
+
+@mixin easeEffect() {
+	-webkit-transition: all 5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+
+@mixin dark-btn-bg() {
+	padding: $margin-xs;
+	background: $darker-bg;
+	color: $lighter-fc;
+	border: 2px solid $border-color;
+	border-radius: 8px;
+	font-size: 1.2em; // 20px
+	font-weight: $font-weight-regular;	
+	cursor: pointer;
+	-webkit-transition: all .7s ease-in-out;
+	transition: all .7s ease-in-out;
+}
+
+@mixin dark-btn-bg-hover() {
+	background: none;
+	color: $darker-bg;
+	border-radius: 2px solid $darker-bg;
+}
+
+@mixin parallax-scrolling() {
+    height: 100%;
+    background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+@mixin pages-header-hover() {
+	font-size: $font-size-xxxl;
+	text-align: center;
+	color: $lighter-fc-2;
+	background: $darker-bg;
+	margin-top: 0;
+	-webkit-transition: all .6s ease-in-out;
+	transition: all .6s ease-in-out;
+
+	&:hover {
+		background: none;
+		color: $link-color-2;
+		cursor: pointer;
+	}
+}
+
+@mixin img-scale-zoom-in() {
+-webkit-transition: all .4s ease;
+		transition: all .4s ease;
+		vertical-align: middle;
+		max-width: 100%;
+		height: auto;
+		
+		&:hover {
+			cursor: pointer;
+	-webkit-transform:scale(1.2);
+			transform:scale(1.2);
+	}
+}
+
+@mixin buzzOutEffect() {
+	@-webkit-keyframes hvr-buzz-out {
+		10% {
+			-webkit-transform: translateX(3px) rotate(2deg);transform: translateX(3px) rotate(2deg);
+		}
+		20% {
+			-webkit-transform: translateX(-3px) rotate(-2deg);transform: translateX(-3px) rotate(-2deg);
+		}
+		30% {
+			-webkit-transform: translateX(3px) rotate(2deg);transform: translateX(3px) rotate(2deg);
+		}
+		40% {
+			-webkit-transform: translateX(-3px) rotate(-2deg);transform: translateX(-3px) rotate(-2deg);
+		}
+		50% {
+			-webkit-transform: translateX(2px) rotate(1deg);transform: translateX(2px) rotate(1deg);
+		}
+		60% {
+			-webkit-transform: translateX(-2px) rotate(-1deg);transform: translateX(-2px) rotate(-1deg);
+		}
+		70% {
+			-webkit-transform: translateX(2px) rotate(1deg);transform: translateX(2px) rotate(1deg);
+		}
+		80% {
+			-webkit-transform: translateX(-2px) rotate(-1deg);transform: translateX(-2px) rotate(-1deg);
+		}
+		90% {
+			-webkit-transform: translateX(1px) rotate(0);transform: translateX(1px) rotate(0);
+		}
+		100% {
+			-webkit-transform: translateX(-1px) rotate(0);transform: translateX(-1px) rotate(0);
+		}
+	}
+	@keyframes hvr-buzz-out {
+		10% {
+			-webkit-transform: translateX(3px) rotate(2deg);transform: translateX(3px) rotate(2deg);
+		}
+		20% {
+			-webkit-transform: translateX(-3px) rotate(-2deg);transform: translateX(-3px) rotate(-2deg);
+		}
+		30% {
+			-webkit-transform: translateX(3px) rotate(2deg);transform: translateX(3px) rotate(2deg);
+		}
+		40% {
+			-webkit-transform: translateX(-3px) rotate(-2deg);transform: translateX(-3px) rotate(-2deg);
+		}
+		50% {
+			-webkit-transform: translateX(2px) rotate(1deg);transform: translateX(2px) rotate(1deg);
+		}
+		60% {
+			-webkit-transform: translateX(-2px) rotate(-1deg);transform: translateX(-2px) rotate(-1deg);
+		}
+		70% {
+			-webkit-transform: translateX(2px) rotate(1deg);transform: translateX(2px) rotate(1deg);
+		}
+		80% {
+			-webkit-transform: translateX(-2px) rotate(-1deg);transform: translateX(-2px) rotate(-1deg);
+		}
+		90% {
+			-webkit-transform: translateX(1px) rotate(0);transform: translateX(1px) rotate(0);
+		}
+		100% {
+			-webkit-transform: translateX(-1px) rotate(0);transform: translateX(-1px) rotate(0);
+		}
+	}
+	.hvr-buzz-out {
+		display: inline-block;
+		vertical-align: middle;
+		-webkit-transform: translateZ(0);transform: translateZ(0);
+		box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+		-webkit-backface-visibility: hidden;backface-visibility: hidden;
+		-moz-osx-font-smoothing: grayscale;
+
+		&:hover, &:focus, &:active {
+			-webkit-animation-name: hvr-buzz-out;animation-name: hvr-buzz-out;
+			-webkit-animation-duration: 0.75s;animation-duration: 0.75s;
+			-webkit-animation-timing-function: linear;animation-timing-function: linear;
+			-webkit-animation-iteration-count: 1;animation-iteration-count: 1;
+		}
+	}
+} // @mixin buzzOutEffect()
+
+/*
+2.	Body & Hero
+*/
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden; // removes empty space in the body 
+} 
+
+body#body {
+    height: 100%;
+	position: relative;
+	background-color: $main-bg;
+	color: $main-fc;
+	font-weight: $font-weight-regular;
+	font-family: $font-family;
+	font-size: 15px;
+	line-height: 1.9em;
+
+	main.container {
+		padding-top: 100px;
+	}
+}
+ 
+// Hide hero-section on Meny-page (local)
+.page-id-20 .section--hero { 
+     display: none; 
+}
+
+// Hide hero-section on Event-page (local)
+.page-id-303 .section--hero { 
+     display: none; 
+}
+// Hide hero-section on Event-page (local & online)
+.error404 .section--hero {
+	display: none; 
+}
+
+// Hide hero-section on Event-page (local & online)
+.single .section--hero {
+	display: none;
+}
+
+// To hide hero-section Meny-page (online)
+.page-id-16 .section--hero { 
+     display: none; 
+}
+
+// To hide hero-section 404-page (online)
+.page-id-129 .section--hero { 
+     display: none; 
+}
+
+

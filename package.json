@@ -1,0 +1,22 @@
+{
+  "name": "brunnsangpizzeria",
+  "version": "1.0.0",
+  "description": "A Website-theme for Brunnsangs Pizzeria",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Karl Karlsson",
+  "dependencies": {
+    "browser-sync": "^2.14.0",
+    "gulp": "*",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-concat": "*",
+    "gulp-concat-css": "*",
+    "gulp-order": "*",
+    "gulp-rename": "*",
+    "gulp-sass": "*",
+    "gulp-uglify": "^2.0.0",
+    "gulp-watch": "^4.3.9"
+  }
+}

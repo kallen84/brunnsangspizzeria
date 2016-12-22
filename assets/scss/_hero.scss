@@ -1,0 +1,164 @@
+/*
+Project: Brunnsängs Pizzeria
+Description: Hero Container
+Author: Karl Karlsson
+Date: 2016-12-20
+Licence: https://www.karlkarlsson.com
+
+Table of contents
+
+1.	Hero Layout
+2.  Desktop Media Queries (Desktop Adjustment)
+*/
+
+/*
+1.	Hero
+*/
+section.section--hero {
+	position: relative;
+	height: auto;
+	margin-top: 110px;
+	-webkit-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
+
+	.container--heroLogo { // div
+		position: absolute;
+		left: 50%;
+		top: 10%;
+		z-index: 3;
+		-webkit-transform: translate(-50%, 0);transform: translate(-50%, 0);
+
+		.heroLogo { // a
+			display: block;
+			width: 450px;
+			height: 300px;
+			background: url(../../images/logo-red.svg);
+			background-size: 450px 300px;
+			padding-right: $glutter-small; 
+			-webkit-transition: all .4s ease-in-out;
+			transition: all .4s ease-in-out;
+
+			&:hover {
+				-webkit-transform: scale(1.1);transform: scale(1.1);
+				cursor: pointer;
+			}
+		}
+
+		.slogan { // div
+			position: relative;
+			height: 200px;
+			width: 100%;
+
+			.container--text { // div
+				position: absolute;
+				left: 50%;
+				width: 100%;
+				height: 100px;
+				-webkit-transform: translate(-50%, 0);transform: translate(-50%, 0);
+
+				p {
+					position: absolute;
+					left: 50%;
+					-webkit-transform: translate(-50%, 0);transform: translate(-50%, 0);
+					background: rgba(0, 0, 0, 0.6);
+					padding: 8px $margin-s; 
+					border-radius: 3px;
+					color: $lighter-fc;
+					font-size: $font-size-small;
+					text-align: center;
+
+					&:nth-child(1) {
+						width: 55%;
+					}
+
+					&:nth-child(2) {
+						width: 80%;
+						top: 2.5em;
+					}
+				} // p
+			} // container--text
+		} // slogan
+	} // container--heroLogo
+
+	// Hero Image slider
+	.slider { // nav
+		position: relative;
+		height: 55em;
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+
+		.slide1,.slide2,.slide3,.slide4,.slide5 { // li
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+
+		.slide1 { // li
+			background: url('../../images/pizza1.jpg')no-repeat center;
+	      	background-size: cover;
+    		animation:fade 17s infinite;
+			-webkit-animation:fade 17s infinite;			
+		}
+
+		.slide2 { // li
+			background: url('../../images/pizza2.jpg')no-repeat center;
+	      	background-size: cover;
+    		animation:fade2 17s infinite;
+			-webkit-animation:fade2 17s infinite;		          
+		}
+
+		.slide3 { // li
+			background: url('../../images/pizza3.jpg')no-repeat center;
+      		background-size: cover;
+    		animation:fade3 17s infinite;
+			-webkit-animation:fade3 17s infinite;		          
+		}
+
+		@keyframes fade {
+			0%   {opacity:1}
+			33.333% { opacity: 0}
+			66.666% { opacity: 0}
+			100% { opacity: 1}
+		}
+
+		@keyframes fade2 {
+			0%   {opacity:0}
+			33.333% { opacity: 1}
+			66.666% { opacity: 0 }
+			100% { opacity: 0}
+		}
+		@keyframes fade3 {
+			0%   {opacity:0}
+			33.333% { opacity: 0}
+			66.666% { opacity: 1}
+			100% { opacity: 0}
+		}
+	} // .slider 
+} // section.section--hero
+
+/*
+2.	Desktop Media Queries (Desktop Adjustment)
+*/
+
+@media (max-width: 1200px) {
+
+	section.section--hero {
+		margin-top: 100px;
+	}
+} // 1200px
+
+@media (max-width: $default-page) { // 1024px
+
+	section.section--hero {
+		margin-top: 70px;
+
+		.container--heroLogo { // div
+			.heroLogo { // a
+				width: 400px;
+				height: 280px;
+				background-size: 400px 280px;
+			}
+		}
+	} // secttion--hero
+} // 1024px
